@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion"; // Import Framer Motion for animations
 import TimeDisplay from "./TimeDisplay";
+import ControlButtons from "./ControlButtons";
 
 export default function StopwatchApp() {
   const [time, setTime] = useState(0);
@@ -37,6 +38,12 @@ export default function StopwatchApp() {
           ⏱️ Stopwatch
         </motion.h1>
         <TimeDisplay time={time} />
+        <ControlButtons
+          isRunning={isRunning}
+          onStart={handleStart}
+          onStop={handleStop}
+          onReset={handleReset}
+        />
       </div>
     </div>
   );
